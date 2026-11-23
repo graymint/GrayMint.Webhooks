@@ -1,0 +1,13 @@
+<Project>
+
+  <!--
+    Settings that depend on properties from the csproj body (IsPackable) belong here, not in
+    Directory.Build.props: .props is imported before the body runs, .targets after it.
+  -->
+
+  <!-- Every published package ships its XML docs, and a public member without them fails its build. -->
+  <PropertyGroup Condition="'$(IsPackable)' == 'true'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

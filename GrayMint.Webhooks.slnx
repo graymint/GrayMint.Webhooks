@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CLAUDE.md" />
+    <File Path="README.md" />
+    <File Path="compose.yaml" />
+    <File Path="docs/design.md" />
+    <File Path="global.json" />
+    <File Path="src/Directory.Build.props" />
+    <File Path="src/Directory.Build.targets" />
+    <File Path="tests/Directory.Build.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/GrayMint.Webhooks/GrayMint.Webhooks.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GrayMint.Webhooks.Test/GrayMint.Webhooks.Test.csproj" />
+  </Folder>
+  <Folder Name="/workflows/">
+    <File Path=".github/dependabot.yml" />
+    <File Path=".github/workflows/publish_nugets.yml" />
+  </Folder>
+</Solution>

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net11.0</TargetFramework>
+		<IsTestProject>true</IsTestProject>
+	</PropertyGroup>
+
+	<!-- the receiver the tests send to -->
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- a database the module doesn't run on, for the test of its refusal -->
+		<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="11.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="11.0.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="11.0.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="4.5.3" />
+		<PackageReference Include="MSTest.TestFramework" Version="4.5.3" />
+		<PackageReference Include="coverlet.collector" Version="10.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\GrayMint.Webhooks\GrayMint.Webhooks.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+	</ItemGroup>
+
+</Project>

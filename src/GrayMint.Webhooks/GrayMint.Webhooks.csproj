@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net11.0</TargetFramework>
+		<IsPackable>true</IsPackable>
+		<Description>The webhooks an app sends: queued in tables of their own on PostgreSQL or SQL Server, in the app's own transaction when it has one, and delivered by any of its hosts with retries, signed as the Standard Webhooks specification says, to public https addresses only.</Description>
+		<!-- The public API's docs ship in the package, and a public member without them fails the build. -->
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<WarningsAsErrors>$(WarningsAsErrors);CS1573;CS1574;CS1591</WarningsAsErrors>
+	</PropertyGroup>
+
+	<!-- No database provider: the host names its own, and the tables go on the one it is given. -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="11.0.0" />
+	</ItemGroup>
+
+	<!-- the exception of an id that names nothing -->
+	<ItemGroup>
+		<PackageReference Include="GrayMint.Common" Version="2.1.320" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="GrayMint.Webhooks.Test" />
+	</ItemGroup>
+
+</Project>
